@@ -1,0 +1,11 @@
+{
+  "name": "shadow-dom",
+  "version": "1.0.0",
+  "description": "explain shadow dom",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "raz mantzur",
+  "license": "ISC"
+}
