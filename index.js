@@ -7,7 +7,6 @@ btnReveal.addEventListener('click', function() {
     'shadows-div-wrapper'
   )[0];
   const bodyElem = document.getElementsByTagName('body')[0];
-  /* btnReveal.style.display = 'none'; */
   shadowsInDom.style.display = 'block';
   bodyElem.style.background = 'black';
 });
