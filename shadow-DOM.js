@@ -3,29 +3,25 @@
 class ShadowsInDom extends HTMLElement {
   constructor() {
     super();
-  }
-}
+    const shadowHost = this.attachShadow({ mode: 'open' });
+    const wrapper = document.createElement('div');
+    wrapper.setAttribute('class', 'shadows-wrapper');
 
-const shadowHost = document.getElementsByClassName('shadow-host')[0];
-const wrapper = document.createElement('div');
-wrapper.setAttribute('class', 'shadows-wrapper');
+    const ghostOneImg = document.createElement('img');
+    const ghostTwoImg = document.createElement('img');
+    const ghostThreeImg = document.createElement('img');
 
-const ghostOneImg = document.createElement('img');
-const ghostTwoImg = document.createElement('img');
-const ghostThreeImg = document.createElement('img');
+    ghostOneImg.src = './assets/zwei.jpg';
+    ghostTwoImg.src = './assets/booo.png';
+    ghostThreeImg.src = './assets/derpy.png';
 
-ghostOneImg.src = './assets/zwei.jpg';
-ghostTwoImg.src = './assets/booo.png';
-ghostThreeImg.src = './assets/derpy.png';
+    wrapper.appendChild(ghostOneImg);
+    wrapper.appendChild(ghostTwoImg);
+    wrapper.appendChild(ghostThreeImg);
 
-wrapper.appendChild(ghostOneImg);
-wrapper.appendChild(ghostTwoImg);
-wrapper.appendChild(ghostThreeImg);
-
-const style = document.createElement('style');
-style.textContent = `
+    const style = document.createElement('style');
+    style.textContent = `
     .shadows-wrapper {
-        display: none;
         position: relative;
         text-align: center;
         margin-top: 200px;
@@ -38,6 +34,9 @@ style.textContent = `
     }
 `;
 
-shadowHost.appendChild(style);
-shadowHost.appendChild(wrapper);
+    shadowHost.appendChild(style);
+    shadowHost.appendChild(wrapper);
+  }
+}
+
 customElements.define('shadows-in-dom', ShadowsInDom);
